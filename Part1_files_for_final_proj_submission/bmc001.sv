@@ -1,8 +1,8 @@
 /* for our constraint length = 3, there will be 2**3 = 8
-of these
+of these*/
 
 
-module bmc111				  // branch metric computation
+module bmc001				  // branch metric computation
 (
    input    [1:0] rx_pair,
    output   [1:0] path_0_bmc,
@@ -16,7 +16,7 @@ module bmc111				  // branch metric computation
    wire     tmp11;
    
    assign tmp00 = rx_pair[0];
-   assign tmp01 = rx_pair[1];
+   assign tmp01 = !rx_pair[1];
    assign tmp10 = !tmp00;
    assign tmp11 = !tmp01;
    
@@ -25,5 +25,5 @@ module bmc111				  // branch metric computation
    
    assign path_1_bmc[1] = tmp10 & tmp11;
    assign path_1_bmc[0] = tmp10 ^ tmp11;
-   
+
 endmodule

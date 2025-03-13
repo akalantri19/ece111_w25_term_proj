@@ -9,7 +9,7 @@ module ACS		                        // add-compare-select
 
    output logic        selection,
    output logic        valid_o,
-   output      [7:0] path_cost);  
+   output logic     [7:0] path_cost);  
 
    wire  [7:0] path_cost_0;			   // branch metric + path metric
    wire  [7:0] path_cost_1;
